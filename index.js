@@ -9,19 +9,23 @@ const port = process.env.PORT || 3000
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static(__dirname + "/public"));
 
+app.set('view engine', 'ejs');
+
 app.get("/", function(req, res) {
 
-  let today = new Date();
+  let today = (new Date()).getDay();
 
-  let response;
+  // let response;
 
-  if (today.getDay() === (6 || 0)) {
-    response = "Yay, it's the weekend"
-  } else {
-    response = "Boooo, I have to work!"
-  }
+  // if (today === (6 || 0)) {
+  //   response = "Yay, it's the weekend"
+  // } else {
+  //   response = "Boooo, I have to work!"
+  // }
 
-  res.send(response)
+  // res.send(response)
+
+  res.render('list', {})
 })
 
 app.listen(port, function(){
