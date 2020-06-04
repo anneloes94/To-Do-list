@@ -13,22 +13,20 @@ app.set('view engine', 'ejs');
 
 app.get("/", function(req, res) {
 
-  let today = (new Date()).getDay();
+  let today = new Date()
 
-  let day;
-
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-  if (today === (6 || 0)) {
-    day = "Weekend"
-    res.render
-  } else {
-    day = "Weekday"
+  const options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long"
   }
+  
+  let day = today.toLocaleDateString("en-US", options)
 
-
-  res.render('list', {kindOfDay: day, dayName: days[today]})
+  res.render('list', {day: day})
 })
+
+app.post("/", )
 
 app.listen(port, function(){
   console.log(`Server started on port ${port}`)
