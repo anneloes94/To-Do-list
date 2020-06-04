@@ -15,17 +15,19 @@ app.get("/", function(req, res) {
 
   let today = (new Date()).getDay();
 
-  // let response;
+  let day;
 
-  // if (today === (6 || 0)) {
-  //   response = "Yay, it's the weekend"
-  // } else {
-  //   response = "Boooo, I have to work!"
-  // }
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-  // res.send(response)
+  if (today === (6 || 0)) {
+    day = "Weekend"
+    res.render
+  } else {
+    day = "Weekday"
+  }
 
-  res.render('list', {})
+
+  res.render('list', {kindOfDay: day, dayName: days[today]})
 })
 
 app.listen(port, function(){
