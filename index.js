@@ -25,7 +25,7 @@ app.get("/", function(req, res) {
   
   let day = today.toLocaleDateString("en-US", options)
 
-  res.render('list', {day: day, newItems: items})
+  res.render('list', {listTitle: day, newItems: items})
 })
 
 app.post("/", function(req, res) {
