@@ -6,10 +6,10 @@ const app = express();
 
 const port = process.env.PORT || 3000
 
-let items = [];
+let items = ["Get liquorice", "Eat liquorice", "Enjoy liquorice"];
 
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 
 app.set('view engine', 'ejs');
 
@@ -24,13 +24,6 @@ app.get("/", function(req, res) {
   }
   
   let day = today.toLocaleDateString("en-US", options)
-
-  console.log(typeof(items))
-  // if (items.length > 0) {
-  //   items.forEach(function(item) {
-  //     console.log(item)
-  //   })
-  // }
 
   res.render('list', {day: day, newItems: items})
 })

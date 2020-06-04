@@ -4,26 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To Do list</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <h1> <%= day %> </h1>
-  
-  <ul>
-    <li>Buy Food</li>
-    <li>Cook Food</li>
-    <li>Eat Food</li>
+  <div class="box" id="heading">
+    <h1> <%= day %> </h1>
+  </div>
+
+  <div class="box">
     <% if (newItems.length > 0) { %>
       <% newItems.forEach(item => { %>
-        <li> <%=  item %> </li>
+        <div class="item"> 
+          <input type="checkbox">
+          <p><%=  item %> </p>
+        </div>
       <% }) %>
     <% } %>
-  </ul>
 
-  <form action="/" method="POST">
-    <input name="newItem" placeholder="new item">
-    <button type="submit" name="button">Submit</button>
-  </form>
+    <form class="item" action="/" method="POST">
+      <input type="text" name="newItem" placeholder="New item" autocomplete="off">
+      <button type="submit" name="button">+</button>
+    </form>
+  </div>
+
+  
   
   
 </body>
