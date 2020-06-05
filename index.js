@@ -25,7 +25,7 @@ app.get("/", function(req, res) {
   
   let day = today.toLocaleDateString("en-US", options)
 
-  res.render('list', {listTitle: day, newItems: items})
+  res.render('list', {listTitle: day, newItems: items, navLink: "about", route: "about"})
 })
 
 app.post("/", function(req, res) {
@@ -34,7 +34,7 @@ app.post("/", function(req, res) {
 })
 
 app.get("/about", function(req, res) {
-  res.render("about")
+  res.render("about", {navLink: "home", route: ""})
 })
 
 app.listen(port, function(){
