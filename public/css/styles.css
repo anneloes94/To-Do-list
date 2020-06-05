@@ -23,6 +23,28 @@ h1 {
   text-align: center;
 }
 
+#about {
+  text-align: justify;
+  max-width: 600px;
+}
+
+.nav-item {
+  padding: 20px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+}
+
+.nav-item:hover {
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: black;
+}
+
 .item {
   min-height: 70px;
   display: flex;
@@ -87,6 +109,11 @@ input[type="text"]:focus {
 ::placeholder {
   color: grey;
   opacity: 1;
+}
+
+header {
+  float: right;
+  margin-right: 50px;
 }
 
 footer {
